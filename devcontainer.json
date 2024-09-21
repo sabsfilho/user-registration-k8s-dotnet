@@ -1,0 +1,35 @@
+{
+	"name": "Lab 02 - K8S.NET",
+	"image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm",
+	"features": {
+	  "ghcr.io/devcontainers/features/docker-in-docker:2": {
+		"version": "latest",
+		"enableNonRootDocker": "true",
+		"moby": "true"
+	  },
+	  "ghcr.io/devcontainers/features/aws-cli:1": {
+		"version": "latest"
+	  },
+	  "ghcr.io/devcontainers/features/dotnet:2": {
+		"version": "latest"
+	  },
+	  "ghcr.io/devcontainers/features/git:1": {}
+	},
+	"postCreateCommand": {
+		"AWSSDKCore": "dotnet new install AWSSDK.Core",
+		"DynamoDB": "dotnet new install AWSSDK.DynamoDBv2",
+		"ExtensionsNETCore": "dotnet new install AWSSDK.Extensions.NETCore.Setup",
+		"LambdaCore": "dotnet new install Amazon.Lambda.Core",
+		"LambdaTemplates": "dotnet new install Amazon.Lambda.Templates",
+		"LambdaTools": "dotnet tool install -g Amazon.Lambda.Tools",
+		"LambdaTestTool": "dotnet tool install -g Amazon.Lambda.TestTool-8.0"
+	 },
+	"customizations": {
+		"vscode": {
+		 "extensions": [
+		   "ms-dotnettools.csdevkit"
+		 ]
+		}
+	}
+}
+  
