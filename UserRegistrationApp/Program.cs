@@ -2,6 +2,10 @@ using UserRegistrationLib;
 
 bool hasStarted = false;
 var builder = WebApplication.CreateBuilder(args);
+
+//set 5432 port for api service
+builder.WebHost.ConfigureKestrel(x => x.ListenAnyIP(5432));
+
 var app = builder.Build();
 
 app.MapGet("/", (IConfiguration configuration) => 

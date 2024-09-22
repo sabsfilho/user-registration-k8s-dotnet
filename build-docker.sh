@@ -3,6 +3,6 @@
 #build
 docker build -t "user-registration-app:1.0.1" --build-arg build_number=1.0.1 .
 #run
-docker run --rm -it -p 8000:8080 -e ASPNETCORE_HTTP_PORTS=8080 user-registration-app:1.0.1
+docker run --rm -it -p 8000:5432 -e ASPNETCORE_HTTP_PORTS=5432 user-registration-app:1.0.1
 #remove
 #docker rm user-registration-app:1.0.1
