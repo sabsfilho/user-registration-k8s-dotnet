@@ -13,5 +13,9 @@ md UserRegisrationApp
 cd UserRegisrationApp
 dotnet new web -f net8.0
 dotnet add reference UserRegistrationLib/UserRegistrationLib.csproj
-dotnet run
+cd ..
+dotnet new sln --name UserRegistration
+dotnet sln add UserRegistrationLib
+dotnet sln add UserRegistrationApp
+dotnet run --project UserRegistrationApp
 #simple webapi mounted so far...
