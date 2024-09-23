@@ -29,14 +29,11 @@ metadata:
   labels:
     app: user-registration-app
     version: v1
-  annotations:
-    prometheus.io/port: '9216'
-    prometheus.io/scrape: 'true'
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: greetings-service
+      app: user-registration-app
   template:
     metadata:
       labels:
@@ -44,7 +41,7 @@ spec:
     spec:
       containers:
       - name: user-registration-app
-        image: user-registration-app:1.0.1
+        image: sabsfilho/user-registration-app:latest
         envFrom:
         - configMapRef:
             name: user-registration-app
@@ -55,20 +52,3 @@ spec:
           requests:
             memory: 200Mi
             cpu: 100m
-        livenessProbe:
-          httpGet:
-            path: /live
-            port: 5432
-        readinessProbe:
-          httpGet:
-            path: /ready
-            port: 5432
-        lifecycle:
-          postStart:
-            httpGet:
-              path: /postStart
-              port: 5432          
-          preStop:
-            httpGet:
-              path: /preStop
-              port: 5432          
