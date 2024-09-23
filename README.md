@@ -12,11 +12,11 @@ https://minikube.sigs.k8s.io/docs/<br/>
 It's important to mention that we need Docker to build this project container image and also a valid Docker Hub account to register and deliver it.<br/>
 https://hub.docker.com/<br/>
 
-I create three bash scripts that have explanations about each installation , configuration, build and test steps.<br/>
-__build-dotnet-webapi-project.sh__: this bash contains commands and instructions to create the .NET solution, projects and artifacts.<br/>
-__build-docker.sh__: this bash contains commands and instructions to build the Docker image and push it to the Docker Hub.<br/>
-Please, check the created __Dockerfile__.<br/>
-__build-kubernetes.sh__: this bash contains commands and instructions to pull Docker image, run __kubectl__, configure, test and debbug __minikube__.<br/>
+I created three bash scripts that have explanations about each installation , configuration, build and test steps.<br/>
+__- build-dotnet-webapi-project.sh__: this bash contains commands and instructions to create the .NET solution, projects and artifacts.<br/>
+__- build-docker.sh__: this bash contains commands and instructions to build the Docker image and push it to the Docker Hub.<br/>
+Please, check the __Dockerfile__.<br/>
+__- build-kubernetes.sh__: this bash contains commands and instructions to pull Docker image, run __kubectl__, configure, test and debbug __minikube__.<br/>
 Please, check the __user-registration-app-deployment.yaml__.<br/>
 
 This GitHub project is related to an article that I am reviewing and it will be released soon. This article explains better how to put everything working, I'll also detail some concepts and give sources about the solutions I decided to use here.<br/><br/>
